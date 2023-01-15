@@ -6,7 +6,7 @@ const NewExpense = (props) => {
   const enteredDataHandler = (enteredData) => {
     const enteredExpenseData = {
       ...enteredData,
-      key: Math.random().toString(),
+      id: Math.random().toString(),
     };
 
     props.collectData(enteredExpenseData);

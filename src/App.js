@@ -1,6 +1,6 @@
 import Expenses from "./components/expenses/Expenses";
 import NewExpense from "../src/components/newExpenses/NewExpense";
-import React from "react";
+import React, { useState } from "react";
 
 const expenses = [
   {
@@ -24,17 +24,17 @@ const expenses = [
   },
 ];
 
-const collectDataHandler = (data) => {
-  // console.log("Data in App.js", data);
-  expenses.push(data);
-};
-
 function App() {
-  // const []
+  const [expensesCollection, setExpensesCollection] = useState(expenses);
+
+  const collectDataHandler = (data) => {
+    setExpensesCollection((exp) => [data, ...expensesCollection]);
+  };
+
   return (
     <div>
       <NewExpense collectData={collectDataHandler} />
-      <Expenses data={expenses} />
+      <Expenses data={expensesCollection} />
     </div>
   );
 }
