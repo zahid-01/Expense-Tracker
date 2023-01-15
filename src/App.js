@@ -1,6 +1,6 @@
+import React, { useState } from "react";
 import Expenses from "./components/expenses/Expenses";
 import NewExpense from "../src/components/newExpenses/NewExpense";
-import React, { useState } from "react";
 
 const expenses = [
   {
